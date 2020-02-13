@@ -38,7 +38,7 @@ public class PlayerControler : MonoBehaviour
             if(other.CompareTag("Enemy") && hasPowerup)
         {
             Rigidbody enemyRigidbody = other.gameObject.GetComponent<Rigidbody>();
-            Vector3 awayFromPlayer = (other.gameObject.transform.position - transform.position);
+            Vector3 awayFromPlayer = (transform.position - other.gameObject.transform.position);
             enemyRigidbody.AddForce(awayFromPlayer * powerupStrength, ForceMode.Impulse);
 
         }
